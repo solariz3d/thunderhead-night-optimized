@@ -1,4 +1,4 @@
-# Thunderhead Raceway — Night (No Dogbowls)
+# Thunderhead Raceway — Night Optimized (No Dogbowls)
 
 A night-racing lighting preset for **Thunderhead Raceway** by **Dogeish** (v0.6). It keeps the
 sponsor and sign lights and the track-edge sidelights, and switches off the stadium floodlights and
@@ -52,7 +52,7 @@ Normal and No Dogbowls. That changes how the two stock layouts are lit, and the 
 series can't be rebuilt that way, so it wasn't done. If you know a way CSP supports this, that's the
 real fix, and this repo would shrink to one config.
 
-So it installs as **Thunderhead Raceway Night**, a second track folder whose only real files are its
+So for now it installs as **Thunderhead Raceway Night Optimized**, a second track folder whose only real files are its
 lights config, its UI card and its small data files.
 
 ## Install
@@ -66,7 +66,7 @@ node tools/make_night_track.js
 
 `AC_ROOT` is optional; without it the script uses `G:\SteamLibrary\steamapps\common\assettocorsa`.
 
-It creates `content/tracks/thunderhead_raceway_night/` with only the No Dogbowls layout:
+It creates `content/tracks/thunderhead_raceway_night_optimized/` with only the No Dogbowls layout:
 
 - **Hard-linked** from the original, so no extra disk space: the five `.kn5` models No Dogbowls uses,
   `skins/`, `texture/`, and the `extension/*.dds` crowd textures. Hard links need the same NTFS
@@ -99,7 +99,7 @@ switching mid-session.
 
 ```
 night_track/extension/ext_config.ini       the night config (sha256 a8c9b86858eddcd9…)
-night_track/ui/no_dogbowls/ui_track.json   "Thunderhead Raceway Night (No Dogbowls)"
+night_track/ui/no_dogbowls/ui_track.json   "Thunderhead Raceway Night Optimized (No Dogbowls)"
 diff/ext_config.night.diff                 exactly what changed from the original
 tools/make_night_track.js                  builds the night track from an installed original
 tools/apply.js                             switches light groups on the original, reversibly

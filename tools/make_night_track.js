@@ -1,6 +1,6 @@
 const fs=require('fs'),path=require('path');
 const SRC=(process.env.AC_ROOT||'G:/SteamLibrary/steamapps/common/assettocorsa')+'/content/tracks/thunderhead_raceway';
-const DST=(process.env.AC_ROOT||'G:/SteamLibrary/steamapps/common/assettocorsa')+'/content/tracks/thunderhead_raceway_night';
+const DST=(process.env.AC_ROOT||'G:/SteamLibrary/steamapps/common/assettocorsa')+'/content/tracks/thunderhead_raceway_night_optimized';
 if(fs.existsSync(DST)){console.error('REFUSING: '+DST+' exists');process.exit(1);}
 const LINK=[], COPY=[];
 const link=(rel)=>{const s=path.join(SRC,rel),d=path.join(DST,rel);fs.mkdirSync(path.dirname(d),{recursive:true});fs.linkSync(s,d);LINK.push(rel);};
