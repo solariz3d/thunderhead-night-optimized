@@ -16,6 +16,13 @@ your original `ext_config.ini` is in [`diff/ext_config.variant.diff`](diff/ext_c
 > Written for you, the track's author, to look at. It contains your own `ext_config.ini`, modified,
 > so the repo is private until you've seen it.
 
+## How much faster
+
+Measured in game at night on a high-end PC: **220–240 FPS on the stock night lighting, 300–420 FPS on
+Night Optimized** — about 4.3 ms per frame down to about 2.8 ms, roughly a third less time per frame.
+One PC, read off the in-game counter, so treat it as a range rather than a benchmark. On a weaker GPU the
+stadium lights are a bigger share of each frame, so the gain there is likely larger, but that's untested.
+
 ## What's on and what's off in Night Optimized
 
 | group (your own label) | lights | Night Optimized | why |
