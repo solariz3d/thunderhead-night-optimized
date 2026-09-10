@@ -60,9 +60,11 @@ lights config, its UI card and its small data files.
 Requires Thunderhead Raceway installed as `content/tracks/thunderhead_raceway`, and Node.js.
 
 ```
-set AC_ROOT=C:path	oassettocorsa        (optional; defaults to G:SteamLibrarysteamappscommonassettocorsa)
+set AC_ROOT=C:\path\to\assettocorsa
 node tools/make_night_track.js
 ```
+
+`AC_ROOT` is optional; without it the script uses `G:\SteamLibrary\steamapps\common\assettocorsa`.
 
 It creates `content/tracks/thunderhead_raceway_night/` with only the No Dogbowls layout:
 
