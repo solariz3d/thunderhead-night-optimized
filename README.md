@@ -60,7 +60,7 @@ lights config, its UI card and its small data files.
 Requires Thunderhead Raceway installed as `content/tracks/thunderhead_raceway`, and Node.js.
 
 ```
-set AC_ROOT=C:\path\to\assettocorsa        (optional; defaults to G:SteamLibrarysteamappsmmonssettocorsa)
+set AC_ROOT=C:path	oassettocorsa        (optional; defaults to G:SteamLibrarysteamappscommonassettocorsa)
 node tools/make_night_track.js
 ```
 
