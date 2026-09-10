@@ -86,29 +86,37 @@ know a way CSP supports per-layout lights directly, that's the cleaner fix.
 
 ## Install
 
-Requires Thunderhead Raceway v0.6 at `content/tracks/thunderhead_raceway`, and Node.js.
+1. Download **`ThunderheadRaceway_NightOptimized_v1.zip`** from this repo's **Releases** (right-hand side).
+2. Unzip it (right-click → Extract All).
+3. Double-click **`INSTALL.bat`**.
+4. Open Content Manager, press F5, pick Thunderhead Raceway, choose **Night Optimized**.
 
-1. Copy your shipped `content/tracks/thunderhead_raceway/extension/ext_config.ini` to
-   `tools/ext_config.ORIGINAL.ini` (it isn't redistributed here; its sha256 is checked, `469a1733…`).
-2. Run:
-   ```
-   set AC_ROOT=C:\path\to\assettocorsa
-   node tools/variant_install.js            (dry run: prints what it would do)
-   node tools/variant_install.js --apply
-   ```
-   `AC_ROOT` is optional; without it the script uses `G:\SteamLibrary\steamapps\common\assettocorsa`.
-3. In Content Manager press F5, then pick Thunderhead Raceway → **Night Optimized**.
+It finds Assetto Corsa through Steam by itself, and asks for the folder if it can't. Close Content
+Manager and the game first. If Windows asks *"Do you want to run this file?"*, click Run.
 
-It adds `night_optimized/` (a copy of `no_dogbowls/`), `models_night_optimized.ini`,
-`ui/night_optimized/` and `extension/stock_lights.lua`, and replaces `extension/ext_config.ini`.
-It refuses if the config isn't the shipped original or if anything it would add already exists.
+**To remove it:** double-click **`UNINSTALL.bat`**. Everything goes back to the original track.
 
-**Undo:** `node tools/variant_install.js --undo --apply` restores your exact original config and removes
-the four added items.
+What the installer does, inside `content\tracks\thunderhead_raceway\`: backs up
+`extension\ext_config.ini` as `ext_config.ini.before-night-optimized`, then adds `night_optimized\`,
+`models_night_optimized.ini`, `ui\night_optimized\` and `extension\stock_lights.lua`, and replaces
+`extension\ext_config.ini`. It refuses — and changes nothing — if the track isn't v0.6 (the lighting
+file's sha256 must be the shipped `469a1733…`), if Night Optimized is already there, or if anything
+fails to copy (it puts everything back). Source: [`installer/install.ps1`](installer/install.ps1).
+Requires only Windows PowerShell, which every Windows PC has.
+
+Tested: install, installing twice, uninstall, uninstalling twice, a different track version, and
+finding the track through Steam; plus the zip unzipped fresh and installed and removed from its own
+files.
 
 ## Files
 
+The zip in Releases is what players and you install from. The rest is the source and the tools used
+to build and check it (the Node tools are for development only; installing doesn't need them).
+
 ```
+installer/INSTALL.bat, UNINSTALL.bat  the double-click launchers
+installer/install.ps1                 the installer and uninstaller
+installer/README.txt                  the plain-language README that goes in the zip
 track/extension/ext_config.ini        the config: your original + 63 ACTIVE=0 + the SCRIPT section (sha256 44f8580b…)
 track/extension/stock_lights.lua      the 61 stock-layout lights (sha256 76aa103a…)
 track/ui/night_optimized/ui_track.json "Thunderhead Raceway (Night Optimized)"

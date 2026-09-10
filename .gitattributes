@@ -1,3 +1,5 @@
 # The lights config must keep its exact bytes (CRLF, as the author ships it): its sha256 is stated in the README.
 *.ini -text
 *.lua -text
+*.bat -text
+*.ps1 -text
