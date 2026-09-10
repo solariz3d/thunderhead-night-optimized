@@ -4,6 +4,11 @@ A night-racing lighting preset for **Thunderhead Raceway** by **Dogeish** (v0.6)
 sponsor and sign lights and the track-edge sidelights, and switches off the stadium floodlights and
 the ambient fill, which is where the performance goes at night.
 
+**Who it's for.** The time slider already decides day or night, so anyone who wants your night
+lighting keeps it exactly as it is. Night Optimized is a second choice: for PCs that struggle with
+the full stadium at night, and for people who like racing in a slightly darker environment. Your
+vision stays the default.
+
 **Nothing in the track's models is changed.** This is a CSP config change only: 63 lines, each one
 `ACTIVE=0` on a light the original defines. The full diff against the original is in
 [`diff/ext_config.night.diff`](diff/ext_config.night.diff).
@@ -48,9 +53,14 @@ The goal was a third layout next to Normal and No Dogbowls, with those two left 
 
 The only way to a real third layout would be to invert it: keep the always-on lights in the config and
 move the stadium and ambient lights into a layout-aware Lua track script that creates them only on
-Normal and No Dogbowls. That changes how the two stock layouts are lit, and the two material-based
-series can't be rebuilt that way, so it wasn't done. If you know a way CSP supports this, that's the
-real fix, and this repo would shrink to one config.
+Normal and No Dogbowls. Everything that would move is a single light, and `ac.LightSource` supports
+every parameter those lights use (position, direction, range, spot and sharpness, fade, diffuse
+concentration, specular, line lights, shadows). The only series lights involved are the two the
+config already marks as not working, which stay off everywhere. CSP's night switch is reproducible
+too: `NIGHT_SHARP` is `INPUT = SUN` with the light on from a sun angle of 88°. So this route is
+feasible, but it moves how the two stock layouts are lit from the config into a script, which is
+your call and not ours. If you know a way CSP supports per-layout lights directly, that's the real
+fix, and this repo would shrink to one config.
 
 So for now it installs as **Thunderhead Raceway Night Optimized**, a second track folder whose only real files are its
 lights config, its UI card and its small data files.
