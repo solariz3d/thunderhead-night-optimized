@@ -1,0 +1,8 @@
+# SPONSORS + SIDELIGHTS — the lamps along the track edges (LIGHT_SERIES on material 'sidelights', in thtrack.kn5 / thtrack2.kn5).
+# The sidelights are the group this file lists as "(unlabelled, top of file)", so it is simply absent below.
+The three lights that wouldn't bloody work aaaaaaaaaaaaaa
+Stadium Colour Lights (author: not working)
+Track Stadium Lights
+Stadium Lights
+Inner Stadium Lights
+Ambient

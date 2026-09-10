@@ -1,0 +1,507 @@
+--- thunderhead_raceway/extension/ext_config.ini (original, v0.6)
++++ night_optimized/extension/ext_config.ini
+@@ -43,6 +43,7 @@
+ 
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR= 0.95, 0.7, 0.5, 20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -63,6 +64,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR= 0.95, 0.7, 0.5, 20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -84,6 +86,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR= 0.95, 0.7, 0.5, 20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -237,7 +240,7 @@
+ FADE_AT = 2000
+ COLOR= 1, 0.85, 0.7, 30
+ OFFSET = X, Y, Z  ; optional offset in meters
+-ACTIVE = 0
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ 
+ [MATERIAL_ADJUSTMENT_...]
+ CONDITION = NIGHT_SHARP
+@@ -690,6 +693,7 @@
+ 
+ 
+ [LIGHT_SERIES_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ MATERIALS = Colourlight  ; or, you could use "MESHES = material:glowing_material?"
+ OFFSET = X, Y, Z  ; optional offset in meters
+ SPOT=190
+@@ -1545,6 +1549,7 @@
+ 
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.9585845,0.8778151,0.75565207,9.99
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=0.880
+@@ -1566,6 +1571,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.9585845,0.8778151,0.75565207,9.99
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=0.880
+@@ -1587,6 +1593,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.9585845,0.8778151,0.75565207,9.99
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=0.880
+@@ -1608,6 +1615,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.9585845,0.8778151,0.75565207,9.99
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=0.880
+@@ -1629,6 +1637,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.9585845,0.8778151,0.75565207,9.99
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=0.880
+@@ -1650,6 +1659,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.9585845,0.8778151,0.75565207,9.99
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=0.880
+@@ -1774,6 +1784,7 @@
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1795,6 +1806,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1816,6 +1828,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1837,6 +1850,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1858,6 +1872,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1879,6 +1894,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1900,6 +1916,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1921,6 +1938,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1942,6 +1960,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1963,6 +1982,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -1984,6 +2004,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2005,6 +2026,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2026,6 +2048,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2047,6 +2070,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2068,6 +2092,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2089,6 +2114,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2110,6 +2136,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2131,6 +2158,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2152,6 +2180,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2173,6 +2202,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.65584236,0.45,0.3,20
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2249,6 +2279,7 @@
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6208795,0.6028328,7.48
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2270,6 +2301,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6208795,0.6028328,0
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2291,6 +2323,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6208795,0.6028328,7.59
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2312,6 +2345,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6208795,0.6028328,7.67
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2333,6 +2367,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6208795,0.6028328,1.12
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2374,6 +2409,7 @@
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=0.8871063,0.682492,0.5997167,3.35
+ DIFFUSE_CONCENTRATION=0.922
+@@ -2393,6 +2429,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=0.8871063,0.682492,0.5997167,1.5
+ DIFFUSE_CONCENTRATION=0.922
+@@ -2412,6 +2449,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=0.8871063,0.682492,0.5997167,2.24
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2431,6 +2469,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=0.8871063,0.682492,0.5997167,1.98
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2452,6 +2491,7 @@
+ 
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ LINE_FROM = -299.49, 24.66, -44.53
+ LINE_TO = 323.19, 30.82, -42.8
+@@ -2467,6 +2507,7 @@
+ 
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.6425227,0.5,6.63
+ DIFFUSE_CONCENTRATION=0.880
+@@ -2488,6 +2529,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.6425227,0.5,6.75
+ DIFFUSE_CONCENTRATION=0.880
+@@ -2509,6 +2551,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.6425227,0.5,6.75
+ DIFFUSE_CONCENTRATION=0.880
+@@ -2530,6 +2573,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.6425227,0.5,5.51
+ DIFFUSE_CONCENTRATION=0.880
+@@ -2554,6 +2598,7 @@
+ 
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.314219,0,25
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2575,6 +2620,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.51743126,0.2837901,7.11
+ DIFFUSE_CONCENTRATION=0.353
+@@ -2596,6 +2642,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.51743126,0.2837901,2.83
+ DIFFUSE_CONCENTRATION=0.353
+@@ -2617,6 +2664,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.47028035,0.33047444,5.54
+ DIFFUSE_CONCENTRATION=0.353
+@@ -2638,6 +2686,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.47028035,0.33047444,5.54
+ DIFFUSE_CONCENTRATION=0.353
+@@ -2659,6 +2708,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.5671691,0.45293474,9.45
+ DIFFUSE_CONCENTRATION=0.353
+@@ -2680,6 +2730,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.5671691,0.45293474,5.11
+ DIFFUSE_CONCENTRATION=0.353
+@@ -2701,6 +2752,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ CONDITION = NIGHT_SHARP
+ COLOR=1,0.5671691,0.45293474,5.11
+ DIFFUSE_CONCENTRATION=0.353
+@@ -2725,6 +2777,7 @@
+ 
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6451495,0.54318416,5
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2744,6 +2797,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6451495,0.54318416,4.63
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2763,6 +2817,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6451495,0.54318416,4.63
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2782,6 +2837,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6451495,0.54318416,4.63
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2801,6 +2857,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6451495,0.54318416,4.63
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2820,6 +2877,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6451495,0.54318416,5.54
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2841,6 +2899,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=1,0.6451495,0.54318416,5.54
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2862,6 +2921,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.98021144,0.53468186,0.40666023,3.98
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2883,6 +2943,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.98021144,0.53468186,0.40666023,1.67
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000
+@@ -2902,6 +2963,7 @@
+ VOLUMETRIC_LIGHT=0
+ 
+ [LIGHT_...]
++ACTIVE=0 ; switched off by thunderhead_lights/apply.js
+ COLOR=0.8945615,0.37570226,0.22660898,2.16
+ CONDITION = NIGHT_SHARP
+ DIFFUSE_CONCENTRATION=1.000

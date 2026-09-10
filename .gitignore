@@ -1,0 +1,3 @@
+# a copy of the author's original config, used locally by tools/apply.js — not redistributed
+tools/ext_config.ORIGINAL.ini
+*.json.tmp
