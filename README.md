@@ -1,121 +1,123 @@
-# Thunderhead Raceway — Night Optimized (No Dogbowls)
+# Thunderhead Raceway — Night Optimized
 
-A night-racing lighting preset for **Thunderhead Raceway** by **Dogeish** (v0.6). It keeps the
-sponsor and sign lights and the track-edge sidelights, and switches off the stadium floodlights and
-the ambient fill, which is where the performance goes at night.
+A third layout for **Thunderhead Raceway** by **Dogeish** (v0.6), next to Normal and No Dogbowls.
+Night Optimized is the No Dogbowls circuit with the night lighting trimmed for performance: the
+stadium floodlights and the ambient fill are off, and every sponsor and sign light and the
+track-edge sidelights stay on.
 
 **Who it's for.** The time slider already decides day or night, so anyone who wants your night
-lighting keeps it exactly as it is. Night Optimized is a second choice: for PCs that struggle with
-the full stadium at night, and for people who like racing in a slightly darker environment. Your
-vision stays the default.
+lighting keeps it exactly as it is on Normal and No Dogbowls. Night Optimized is a second choice: for
+PCs that struggle with the full stadium at night, and for people who like racing in a slightly darker
+environment. Your vision stays the default.
 
-**Nothing in the track's models is changed.** This is a CSP config change only: 63 lines, each one
-`ACTIVE=0` on a light the original defines. The full diff against the original is in
-[`diff/ext_config.night.diff`](diff/ext_config.night.diff).
+**No model is changed.** Everything here is CSP config and one Lua track script. The full diff against
+your original `ext_config.ini` is in [`diff/ext_config.variant.diff`](diff/ext_config.variant.diff).
 
-> Written for the track's author to look at. It contains the author's own `ext_config.ini`, modified,
-> so the repo is private until they've seen it.
+> Written for you, the track's author, to look at. It contains your own `ext_config.ini`, modified,
+> so the repo is private until you've seen it.
 
-## What's on and what's off
+## What's on and what's off in Night Optimized
 
-| group (the author's own label) | lights | state | why |
+| group (your own label) | lights | Night Optimized | why |
 |---|---:|:-:|---|
 | Stadium Lights | 20 | **off** | 450 m range each; by far the most expensive |
 | Ambient | 27 | **off** | 18 of them reach 200–300 m |
 | Inner Stadium Lights | 5 | **off** | 300 m range |
 | Track Stadium Lights | 6 | **off** | short (56 m); tried on, looked better off |
-| The three lights that wouldn't bloody work | 4 | **off** | already not working, per the author's comment |
-| Stadium Colour Lights | 1 series | **off** | "not working currently", per the author's comment |
+| The three lights that wouldn't bloody work | 3 + 1 series | **off** | your comment; the series was already `ACTIVE = 0` |
+| Stadium Colour Lights | 1 series | **off** | "not working currently", per your comment |
 | every sponsor and sign group | 43 | on | the look of the track at night |
 | sidelights (`LIGHT_SERIES` on material `sidelights`) | 1 series | on | the lamps along the track edges |
 
-The 56 glow entries (`MATERIAL_ADJUSTMENT`) are untouched, so bulbs and signs still look lit. That's
-why the stadium floodlight heads still glow even though they no longer cast light. The per-light list
+The 56 glow entries (`MATERIAL_ADJUSTMENT`) are untouched on every layout, so bulbs and signs still look
+lit — the floodlight heads glow on Night Optimized even though they cast no light. The per-light list
 (position, range, spot, colour, config line) is in [`tools/INVENTORY.md`](tools/INVENTORY.md).
 
 Why range is the thing to cut, from CSP's own lights documentation: *"amount of lights is not an issue
 in itself, the main problem comes from how many pixels on a screen are affected by how many lights."*
 ([Tracks – Lights](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Tracks-%E2%80%93-Lights))
 
-## Why it's a separate track and not a third layout
+## How one track gets two different night lightings
 
-The goal was a third layout next to Normal and No Dogbowls, with those two left exactly as shipped.
-**CSP (tested on v0.2.11, AC 1.16.4) can't do that.** Every route was checked:
+CSP gives every layout of a track the same lights config. That was checked four ways before building
+this (tested on CSP v0.2.11, AC 1.16.4):
 
-1. **An `extension/ext_config.ini` inside a layout folder is ignored.** Tested in game: the layout
-   loaded with the stock lights.
-2. **CSP only looks for the config per track.** The only config filenames in CSP's `dwrite.dll` are
-   `extension\ext_config.ini`, `ext_config.ini` and `ext_config.bin`.
-3. **Conditions can't read the layout.** The inputs CSP's shipped conditions use are `SUN`, `TIME`,
+1. An `extension/ext_config.ini` inside a layout folder is ignored — tested in game.
+2. The only config filenames in CSP's `dwrite.dll` are `extension\ext_config.ini`, `ext_config.ini`
+   and `ext_config.bin`: per track, never per layout.
+3. Conditions can't read the layout: the inputs CSP's shipped conditions use are `SUN`, `TIME`,
    `YEAR_PROGRESS`, `FLAG_TYPE` and `ONE`.
-4. **Lua can read the layout (`ac.getTrackLayout()`) and can create lights (`ac.LightSource`),** but
-   there is no call that switches off a config-defined light.
+4. Lua can read the layout and create lights, but can't switch off a config-defined light.
 
-The only way to a real third layout would be to invert it: keep the always-on lights in the config and
-move the stadium and ambient lights into a layout-aware Lua track script that creates them only on
-Normal and No Dogbowls. Everything that would move is a single light, and `ac.LightSource` supports
-every parameter those lights use (position, direction, range, spot and sharpness, fade, diffuse
-concentration, specular, line lights, shadows). The only series lights involved are the two the
-config already marks as not working, which stay off everywhere. CSP's night switch is reproducible
-too: `NIGHT_SHARP` is `INPUT = SUN` with the light on from a sun angle of 88°. So this route is
-feasible, but it moves how the two stock layouts are lit from the config into a script, which is
-your call and not ours. If you know a way CSP supports per-layout lights directly, that's the real
-fix, and this repo would shrink to one config.
+So it's inverted:
 
-So for now it installs as **Thunderhead Raceway Night Optimized**, a second track folder whose only real files are its
-lights config, its UI card and its small data files.
+- **The config** carries only what's lit on every layout: your sponsors, signs and sidelights. The 61
+  stadium, ambient and track-stadium lights are `ACTIVE=0` there, and the config gains one section:
+  ```ini
+  [SCRIPT_...]
+  SCRIPT = stock_lights.lua
+  ```
+- **[`stock_lights.lua`](track/extension/stock_lights.lua)** rebuilds those 61 lights as `ac.LightSource`s
+  on every layout **except `night_optimized`**, and only at night, using your config's own rule:
+  `NIGHT_SHARP` is `INPUT = SUN` with the light on from a sun angle of 88°. It's generated straight from
+  your original config by [`tools/make_variant_script.js`](tools/make_variant_script.js), so every value
+  is yours: position, direction, colour × intensity, range, fade at/smooth, spot and sharpness, diffuse
+  concentration, specular, single frequency, range gradient, volumetric, shadows and their settings,
+  and the one line light (`LINE_FROM`/`LINE_TO`, `COLOR_FROM`/`COLOR_TO`). No config key was left
+  without a Lua equivalent.
+
+**Tested in game** on the Normal layout at night — the stadium looked like your stock night, and CSP's
+log shows:
+
+```
+[stock_lights] loaded on layout "normal": 61 lights
+[stock_lights] sunAngle=162.39 sunPitch=45.00 -> ON, 61 live
+```
+
+with no Lua errors. Night Optimized was tested with the same config body earlier: dark stadium,
+sponsors and sidelights lit.
+
+**The one difference from your stock night on Normal and No Dogbowls:** the Stadium Colour Lights series
+can't be rebuilt in Lua (a series spawns per mesh, which only the config can do), so it's off on those
+layouts too. Your comment marks it *"not working currently"*, so it should look the same.
+
+This moves how your two stock layouts are lit from the config into a script. That's your call. If you
+know a way CSP supports per-layout lights directly, that's the cleaner fix.
 
 ## Install
 
-Requires Thunderhead Raceway installed as `content/tracks/thunderhead_raceway`, and Node.js.
+Requires Thunderhead Raceway v0.6 at `content/tracks/thunderhead_raceway`, and Node.js.
 
-```
-set AC_ROOT=C:\path\to\assettocorsa
-node tools/make_night_track.js
-```
+1. Copy your shipped `content/tracks/thunderhead_raceway/extension/ext_config.ini` to
+   `tools/ext_config.ORIGINAL.ini` (it isn't redistributed here; its sha256 is checked, `469a1733…`).
+2. Run:
+   ```
+   set AC_ROOT=C:\path\to\assettocorsa
+   node tools/variant_install.js            (dry run: prints what it would do)
+   node tools/variant_install.js --apply
+   ```
+   `AC_ROOT` is optional; without it the script uses `G:\SteamLibrary\steamapps\common\assettocorsa`.
+3. In Content Manager press F5, then pick Thunderhead Raceway → **Night Optimized**.
 
-`AC_ROOT` is optional; without it the script uses `G:\SteamLibrary\steamapps\common\assettocorsa`.
+It adds `night_optimized/` (a copy of `no_dogbowls/`), `models_night_optimized.ini`,
+`ui/night_optimized/` and `extension/stock_lights.lua`, and replaces `extension/ext_config.ini`.
+It refuses if the config isn't the shipped original or if anything it would add already exists.
 
-It creates `content/tracks/thunderhead_raceway_night_optimized/` with only the No Dogbowls layout:
-
-- **Hard-linked** from the original, so no extra disk space: the five `.kn5` models No Dogbowls uses,
-  `skins/`, `texture/`, and the `extension/*.dds` crowd textures. Hard links need the same NTFS
-  volume. They're only used for files nothing edits.
-- **Real copies:** `data/`, `no_dogbowls/`, `models_no_dogbowls.ini`, `ui/`, and the night
-  `extension/ext_config.ini` from [`night_track/`](night_track/).
-
-It refuses to run if the destination already exists. In Content Manager, press F5 afterwards.
-
-**If you had the earlier "night_optimized" layout selected:** Content Manager keeps the last selection
-and crashes with *"layout night_optimized for track thunderhead_raceway is missing"*. Pick the new
-track instead.
-
-## Trying other mixes on the original track
-
-`tools/apply.js` switches whole groups of lights off in the original track's config, always starting
-from a backup of the original (it checks that the backup's sha256 is the shipped file's,
-`469a1733c2868b84…`). Put a copy of the original config at `tools/ext_config.ORIGINAL.ini` first.
-
-```
-node tools/apply.js tools/presets/sponsors-only.txt
-node tools/apply.js tools/presets/sponsors-plus-sidelights.txt   (= this night build)
-node tools/apply.js --restore
-```
-
-Presets are plain lists of the author's group labels. CSP picks up config changes live, so avoid
-switching mid-session.
+**Undo:** `node tools/variant_install.js --undo --apply` restores your exact original config and removes
+the four added items.
 
 ## Files
 
 ```
-night_track/extension/ext_config.ini       the night config (sha256 a8c9b86858eddcd9…)
-night_track/ui/no_dogbowls/ui_track.json   "Thunderhead Raceway Night Optimized (No Dogbowls)"
-diff/ext_config.night.diff                 exactly what changed from the original
-tools/make_night_track.js                  builds the night track from an installed original
-tools/apply.js                             switches light groups on the original, reversibly
-tools/parse.js, inventory.js, INVENTORY.md the light inventory and how it was made
-tools/presets/                             saved light mixes
+track/extension/ext_config.ini        the config: your original + 63 ACTIVE=0 + the SCRIPT section (sha256 44f8580b…)
+track/extension/stock_lights.lua      the 61 stock-layout lights (sha256 76aa103a…)
+track/ui/night_optimized/ui_track.json "Thunderhead Raceway (Night Optimized)"
+diff/ext_config.variant.diff          exactly what changed in the config
+tools/variant_install.js              install / --undo, dry run by default
+tools/make_variant_script.js          regenerates stock_lights.lua from your original config
+tools/apply.js, presets/              switch light groups on the original to try other mixes
+tools/parse.js, inventory.js, INVENTORY.md  the light inventory and how it was made
 ```
 
 Track, models and original lighting config: **Dogeish** (patreon.com/Dogeish).
-Night preset: **solariz3d**.
+Night Optimized: **solariz3d**.

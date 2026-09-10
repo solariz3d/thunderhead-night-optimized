@@ -1,0 +1,14 @@
+{
+	"name": "Thunderhead Raceway (Night Optimized)",
+	"description": "Alternate layout without the Dogbowls, ideal for racing and time trials.",
+	"tags" : ["circuit", "WRL", "t180"],
+	"geotags": ["lat", "lon"],
+	"country": "USA",
+	"author": "Dogeish",
+	 "url": "patreon.com/Dogeish",
+	"version": "0.6",
+	"length": "9271m",
+	"width": "18m",
+	"pitboxes": "48",
+	"run": "counter-clockwise"
+}

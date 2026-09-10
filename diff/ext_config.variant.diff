@@ -1,5 +1,5 @@
 --- thunderhead_raceway/extension/ext_config.ini (original, v0.6)
-+++ night_optimized/extension/ext_config.ini
++++ thunderhead_raceway/extension/ext_config.ini (with Night Optimized)
 @@ -43,6 +43,7 @@
  
  
@@ -505,3 +505,11 @@
  COLOR=0.8945615,0.37570226,0.22660898,2.16
  CONDITION = NIGHT_SHARP
  DIFFUSE_CONCENTRATION=1.000
+@@ -2989,3 +3051,7 @@
+ CAMERA_1_UP = 0 ,1 ,0
+ CAMERA_1_FOV = 35
+ CAMERA_1_ASPECT_RATIO = 1.652
++
++[SCRIPT_...]
++; Night Optimized: the stadium and ambient lights exist on every layout except night_optimized.
++SCRIPT = stock_lights.lua
